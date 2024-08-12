@@ -12,6 +12,7 @@ class Livro(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT, related_name="livros", blank=True, null=True)
     editora = models.ForeignKey(Editora, on_delete=models.PROTECT, related_name="livros", blank=True, null=True)
     autor = models.ForeignKey(Autor, on_delete=models.PROTECT, related_name="livros", blank=True, null=True)
+    coautor = models.ForeignKey(Autor, on_delete=models.PROTECT, related_name="livros_coautor", blank=True, null=True)
 
     def __str__(self):
         return f"({self.id}) {self.titulo} ({self.quantidade})"

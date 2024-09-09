@@ -14,7 +14,7 @@ class Compra(models.Model):
     status = models.IntegerField(choices=StatusCompra.choices,  default=StatusCompra.CARRINHO)
 
     def __str__(self):
-        return f'{self.user} - {self.status} - ({self.id})'
+        return f'{self.user} - {self.status}'
 
 class ItensCompra(models.Model):
     compra = models.ForeignKey(Compra, on_delete=models.CASCADE, related_name="itens")

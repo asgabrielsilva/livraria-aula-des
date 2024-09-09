@@ -9,5 +9,5 @@ class Compra(models.Model):
         PAGO = 3, "Pago"
         ENTREGUE = 4, "Entregue"
 
-    usuario = models.ForeignKey(User, on_delete=models.PROTECT, related_name="compras")
+    user = models.ForeignKey(User, on_delete=models.PROTECT, related_name="compras")
     status = models.IntegerField(choices=StatusCompra.choices,  default=StatusCompra.CARRINHO)
